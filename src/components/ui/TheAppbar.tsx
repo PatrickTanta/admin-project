@@ -13,7 +13,7 @@ export const TheAppbar: FC<{ title: string }> = ({ title }) => {
     const mobileMenuId = 'primary-search-account-menu-mobile'
     const [moreAnchorEl, setMoreAnchorEl] = useState(null)
     const isMobileMenuOpen = Boolean(moreAnchorEl)
-    const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+    const handleMenuOpen = (event: SetStateAction<null>) => {
         setMoreAnchorEl(event.currentTarget)
     }
     const handleMenuClose = () => {

@@ -16,7 +16,7 @@ const TheAppbarMenuItem: FC<{ item: { item: string; path: string } }> = ({
     )
 }
 
-export const TheAppbarMenu = ({ items, ...props }) => {
+export const TheAppbarMenu: FC<any> = ({ items, ...props }) => {
     return (
         <Menu {...props} sx={{ color: '#582A8F' }}>
             {items.map((el) => (
