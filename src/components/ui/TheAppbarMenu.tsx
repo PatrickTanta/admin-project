@@ -3,6 +3,7 @@ import MenuItem from '@mui/material/MenuItem'
 import { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 import Typography from '@mui/material/Typography'
+import { MenuItemI } from './TheAppbar'
 
 const TheAppbarMenuItem: FC<{ item: { item: string; path: string } }> = ({
     item
@@ -19,7 +20,7 @@ const TheAppbarMenuItem: FC<{ item: { item: string; path: string } }> = ({
 export const TheAppbarMenu: FC<any> = ({ items, ...props }) => {
     return (
         <Menu {...props} sx={{ color: '#582A8F' }}>
-            {items.map((el) => (
+            {items.map((el: MenuItemI) => (
                 <TheAppbarMenuItem item={el} key={el.item}></TheAppbarMenuItem>
             ))}
         </Menu>

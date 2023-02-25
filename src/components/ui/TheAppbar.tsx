@@ -8,19 +8,23 @@ import { Divider, Typography } from '@mui/material'
 import { useState, FC } from 'react'
 import { TheAppbarMenu } from './TheAppbarMenu'
 import { NavLink } from 'react-router-dom'
+export interface MenuItemI {
+    item: string
+    path: string
+}
 
 export const TheAppbar: FC<{ title: string }> = ({ title }) => {
     const mobileMenuId = 'primary-search-account-menu-mobile'
     const [moreAnchorEl, setMoreAnchorEl] = useState(null)
     const isMobileMenuOpen = Boolean(moreAnchorEl)
-    const handleMenuOpen = (event: SetStateAction<null>) => {
+    function handleMenuOpen(event: any) {
         setMoreAnchorEl(event.currentTarget)
     }
     const handleMenuClose = () => {
         setMoreAnchorEl(null)
     }
 
-    const menuItems = [{ item: 'About', path: '/about' }]
+    const menuItems: MenuItemI[] = [{ item: 'About', path: '/about' }]
 
     return (
         <Box sx={{ flexGrow: 1 }}>
